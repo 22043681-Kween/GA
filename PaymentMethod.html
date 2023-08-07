@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Payment Method - SOTERIA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .payment-method-container {
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .payment-method-container h1 {
+            color: #007bff;
+        }
+        .payment-method {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            opacity: 1;
+            transition: opacity 0.5s; /* Smooth fade effect */
+        }
+        .payment-method.selected {
+            font-weight: bold;
+            opacity: 1; /* Fully visible */
+        }
+        .payment-method.unselected {
+            opacity: 0.3; /* Faded */
+        }
+        .payment-method-container button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-method-container">
+        <h1>Select Payment Method</h1>
+        <p>Please choose your payment method:</p>
+        <div class="payment-method" data-method="credit" onclick="selectPaymentMethod(this)">Credit/Debit card</div>
+        <div class="payment-method" data-method="paypal" onclick="selectPaymentMethod(this)">PayPal</div>
+        <div class="payment-method" onclick="selectPaymentMethod(this)">Bank Deposit</div>
+        <button onclick="continuePayment()">CONTINUE</button>
+    </div>
+    <script>
+        function selectPaymentMethod(element) {
+            // Reset all payment methods
+            var methods = document.querySelectorAll('.payment-method');
+            methods.forEach(function(method) {
+                method.classList.remove('selected');
+                method.classList.add('unselected');
+            });
+
+            // Highlight the selected method
+            element.classList.add('selected');
+            element.classList.remove('unselected');
+        }
+
+        function continuePayment() {
+            var selectedMethod = document.querySelector('.payment-method.selected');
+
+            if (selectedMethod && selectedMethod.getAttribute('data-method') === 'paypal') {
+                alert('Proceeding with the selected payment method.');
+                window.location.href = 'PayPal.html';
+            } else if (selectedMethod && selectedMethod.getAttribute('data-method') === 'credit'){ 
+                alert('Proceeding with the selected payment method.');
+                window.location.href = 'CreditCard.html';
+                    // Implement other payment methods or show an error message
+                
+            } else {
+                alert('Please select a payment method.');
+            }
+            }
+    </script>
+</body>
+</html>

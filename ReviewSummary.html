@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .summary-container {
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .summary-container h1 {
+            color: #007bff;
+        }
+        .summary-container p {
+            text-align: left;
+        }
+        .summary-container button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #confirm-payment {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+        #cancel {
+            background-color: #ccc;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="summary-container">
+        <h1>Review Summary</h1>
+        <p><strong>Insurance Type:</strong> <span id="insurance-type"></span></p>
+        <p><strong>Family Members:</strong></p>
+        <ul id="family-members"></ul>
+        <button id="confirm-payment" onclick="confirmPayment()">Confirm Payment</button>
+        <button id="cancel" onclick="cancel()">Cancel</button>
+    </div>
+    <script>
+        // Retrieve the selected values from sessionStorage
+        var selectedInsuranceType = sessionStorage.getItem('selectedInsuranceType');
+        var selectedFamilyMember = sessionStorage.getItem('selectedFamilyMember');
+
+        // Map the insurance type value to a display name
+        var insuranceTypeMapping = {
+            'soteria-life-360': 'Soteria Life 360',
+            'soteria-health': 'Soteria Health',
+            'soteria-basic': 'Soteria Basic'
+        };
+        selectedInsuranceType = insuranceTypeMapping[selectedInsuranceType] || 'Unknown';
+
+        // Display the selected insurance type
+        document.getElementById('insurance-type').textContent = selectedInsuranceType;
+
+        // Display the selected family member
+        var familyMembersList = document.getElementById('family-members');
+        var listItem = document.createElement('li');
+        listItem.textContent = selectedFamilyMember;
+        familyMembersList.appendChild(listItem);
+
+        // Redirect to PaymentSuccessful.html on confirm
+        function confirmPayment() {
+            window.location.href = 'PaymentSuccessful.html';
+        }
+
+        // Cancel action (you can define what happens on cancel)
+        function cancel() {
+            alert('Payment has been canceled.');
+            // Redirect or perform other actions as needed
+        }
+        </script>
+        </body>
+        </html>
+
+

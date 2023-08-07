@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOTERIA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            position: relative; /* Added to position the logout button */
+        }
+        .logout-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background-color: #B08500; /* Dark mustard yellow */
+            color: white;
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer;
+        }
+        .logout-button:hover {
+            background-color: #8C6A00; /* Darker shade on hover */
+        }
+        .menu-container {
+            background-color: #B08500; /* Dark mustard yellow */
+            border-radius: 10px; /* Rounded corners */
+            width: 300px; /* Fixed width */
+            margin: 20px auto; /* Centered on the page */
+            padding: 10px;
+        }
+        .menu-item {
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .menu-item:hover {
+            background-color: #8C6A00; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <button class="logout-button" onclick="logout()">LOG OUT</button> <!-- Logout button -->
+    <div class="menu-container">
+        <a href="#" class="menu-item">Book an Appointment</a>
+        <a href="#" class="menu-item">Browse Products</a>
+        <a href="#" class="menu-item">Claim Insurance</a>
+        <a href="#" class="menu-item">Calculate Eligibility</a>
+        <a href="PayBills.html" class="menu-item">Pay Bills</a>
+    </div>
+    <script>
+        function logout() {
+            window.location.href = 'Homepage.html';
+            alert('You have been logged out.');
+        }
+    </script>
+</body>
+</html>

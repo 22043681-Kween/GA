@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Bills - SOTERIA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .payment-container {
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .payment-container h1 {
+            color: #007bff;
+        }
+        .payment-container select,
+        .payment-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        .payment-container button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Pay Bills</h1>
+        <p>Select the correct information below:</p>
+        <label for="insurance-type">Select Insurance Type:</label>
+        <select id="insurance-type">
+            <option value="soteria-life-360">Soteria Life 360</option>
+            <option value="soteria-health">Soteria Health</option>
+            <option value="soteria-basic">Soteria Basic</option>
+        </select>
+        <label for="bill-reference">Enter Bill Reference Number:</label>
+        <input type="text" id="bill-reference" placeholder="Bill Reference No.">
+        <label for="family-member">Select Eligible Family Member:</label>
+        <input type="text" id="family-member" placeholder="Select eligible family member">
+        <button onclick="continueToPayment()">CONTINUE</button>
+    </div>
+    <script>
+        function continueToPayment() {
+            var insuranceType = document.getElementById('insurance-type').value;
+            var familyMember = document.getElementById('family-member').value;
+
+            // Store the selected values in sessionStorage
+            sessionStorage.setItem('selectedInsuranceType', insuranceType);
+            sessionStorage.setItem('selectedFamilyMember', familyMember);
+
+            // Redirect to the PaymentMethod.html page
+            window.location.href = 'PaymentMethod.html';
+        }
+    </script>
+</body>
+</html>
