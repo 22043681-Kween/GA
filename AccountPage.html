@@ -7,29 +7,37 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            position: relative; /* Added to position the logout button */
+            background: url('yoga.png') no-repeat center center fixed; 
+            background-size: cover;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center; 
+            padding: 2em; 
         }
-        .logout-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-            background-color: #B08500; /* Dark mustard yellow */
-            color: white;
-            border: none;
-            border-radius: 5px; /* Rounded corners */
-            cursor: pointer;
-        }
-        .logout-button:hover {
-            background-color: #8C6A00; /* Darker shade on hover */
+        .content {
+            width: 90%; 
+            max-width: 1400px; 
+            height: auto; 
+            display: flex;
+            padding: 20px; 
         }
         .menu-container {
-            background-color: #B08500; /* Dark mustard yellow */
-            border-radius: 10px; /* Rounded corners */
-            width: 300px; /* Fixed width */
-            margin: 20px auto; /* Centered on the page */
-            padding: 10px;
+            flex: 2;
+            margin-right: 20px;
+            background-color: #d6a309;
+        }
+        .menu-item {
+            font-size: 2em;
+        }
+        .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .image-container img {
+            max-width: 90%; 
+            height: auto;
         }
         .menu-item {
             padding: 10px;
@@ -40,22 +48,48 @@
         .menu-item:hover {
             background-color: #8C6A00; /* Darker shade on hover */
         }
+        h2 {
+            text-align: center;
+        }
+
+        .logout-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
     </style>
 </head>
 <body>
-    <button class="logout-button" onclick="logout()">LOG OUT</button> <!-- Logout button -->
-    <div class="menu-container">
-        <a href="#" class="menu-item">Book an Appointment</a>
-        <a href="#" class="menu-item">Browse Products</a>
-        <a href="#" class="menu-item">Claim Insurance</a>
-        <a href="#" class="menu-item">Calculate Eligibility</a>
-        <a href="PayBills.html" class="menu-item">Pay Bills</a>
+    <button class="logout-button">Logout</button>
+    <div class="content">
+        <div class="menu-container">
+            <h2>What would you like to do today?</h2>
+            <a href="BookAppointment.html" class="menu-item">Book an Appointment</a>
+            <div class="menu-item">Browse Products</div>
+            <div class="menu-item">Claim Insurance</div>
+            <div class="menu-item">Calculate Eligibility</div>
+            <a href="PayBills.html" class="menu-item">Pay Bills</a>
+        </div>
+        <div class="image-container">
+            <img src="moneylaundering.png">
+        </div>
     </div>
+    
     <script>
         function logout() {
-            window.location.href = 'Homepage.html';
-            alert('You have been logged out.');
+            alert("You have been logged out.");
+            window.location.href = 'homepage.html';
         }
     </script>
+</head>
+<body>
+    <button class="logout-button" onclick="logout()">Logout</button>
 </body>
 </html>

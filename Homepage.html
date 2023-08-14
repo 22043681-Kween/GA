@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOTERIA</title>
+    <title>SOTERIA - Home</title>
     <style>
         body { 
             font-family: Arial, sans-serif; 
@@ -13,7 +13,7 @@
         .navbar { 
             display: flex; 
             justify-content: space-around; 
-            background-color: #007bff; 
+            background-color: black; 
             padding: 10px; 
             color: white; 
         }
@@ -21,7 +21,7 @@
             color: white; 
             padding: 10px 20px; 
             background-color: #f0f0f0; 
-            color: #007bff; 
+            color: black; 
             border-radius: 5px; 
         }
         .banner { 
@@ -40,47 +40,87 @@
             font-size: 18px; 
             margin: 10px; 
         }
-        .image-section { 
-            display: flex; 
-            justify-content: space-between; 
-            background: url('woman-dog.jpg'); 
-            background-size: cover; 
-            padding: 50px; }
+        .image-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('family-photo.jpg');
+            background-size: cover;
+            padding: 50px;
+            height: 100vh;
+            display: flex;
+            align-items: center; /* Center the text vertically */
+            justify-content: center; /* Center the text horizontally */
+        }
 
         .image-section div { 
             width: 50%; 
         }
         .image-section .text { 
             padding: 20px; 
-            background-color: rgba(255, 255, 255, 0.7); 
+            background-color: rgba(0, 0, 0, 0.7); 
+            color: goldenrod; /* Set the text color to white for better visibility */
+            text-align: center; /* Center the text */
+            border-radius: 10px;
         }
-        .benefits { 
-            background-color: #f0f0f0; 
-            padding: 20px; 
-            text-align: center; 
+        
+        .benefits {
+            background-color: goldenrod;
+            padding: 20px;
+            text-align: center;
+            position: bottom;
+            bottom: 0;
+            width: 100%;
+            font-size: 20px; 
         }
+
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product {
+            width: 30%;
+            border: 1px solid #007bff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            border-radius: 10px;
+        }
+
     </style>
 </head>
 <body>
     <div class="navbar">
-        <img src="logo.png" alt="SOTERIA Logo">
         <a href="About Us.html">ABOUT US</a>
         <a href="Contact Us.html">CONTACT US</a>
         <a href="FAQ.html">FAQ</a>
         <a href="Login.html">LOGIN/REGISTER</a>
     </div>
-    <div class="banner">
+    <div class="image-section">
+    <div class="text">
         <h1>SOTERIA</h1>
         <p>Keep yourself and your loved ones covered</p>
-    </div>
-    <div class="image-section">
-        <div class="text">
-            <!-- Text content to be added here later -->
         </div>
-        <!-- Image of woman and dog is set as background later -->
     </div>
+</div>
+
     <div class="benefits">
-        <p>Get coverage of up to $1.5 million with Soteria life insurance</p>
+        <p>Get coverage of up to $1.5 million with Soteria life insurance!</p>
     </div>
+    <div class="products">
+        <div class="product">
+            <h2>Soteria Life 360</h2>
+            <p>All-in-one package. Full coverage for all health-related matters that concerns you.</p>
+        </div>
+        <div class="product">
+            <h2>Soteria Health</h2>
+            <p>Up to $500,000 coverage for hospitalization, recurring illnesses and critical surgery costs</p>
+        </div>
+        <div class="product">
+            <h2>Soteria Basic</h2>
+            <p>Secure your hospitalization fees and basic surgery costs</p>
+        </div>
+    </div>
+    
 </body>
 </html>

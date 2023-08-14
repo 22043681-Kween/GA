@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to SOTERIA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            text-align: center;
+            background: #fff;
+            padding: 40px;
+            margin: 40px auto;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #soteria-logo {
+            margin-right: 50px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        label, input {
+            display: block;
+            margin: 10px auto;
+            width: 80%;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.8em;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Activate Account</h1>
+        <form id="activate-form">
+            <input type="text" id="new-username" placeholder="Enter New Username">
+            <input type="password" id="new-password" placeholder="Enter New Password">
+            <div id="length-error-message" class="error-message">Password must be at least 8 characters long.</div>
+            <div id="special-error-message" class="error-message">Password must include at least one special character.</div>
+            <div id="number-error-message" class="error-message">Password must include at least one number.</div>
+            <input type="password" id="confirm-password" placeholder="Confirm New Password">
+            <div id="match-error-message" class="error-message">Passwords do not match.</div>
+            <button type="submit">ACTIVATE ACCOUNT</button>
+            </form>
+            <p>Already have a Soteria account? <a href="LoginPage.html">Log in</a></p>
+            </div>
+    </div>
+    <script>
+        document.getElementById('activate-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+        
+            var newUsername = document.getElementById('new-username').value;
+            var newPassword = document.getElementById('new-password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+        
+            // Hide all error messages initially
+            var errorMessages = document.getElementsByClassName('error-message');
+            for (var i = 0; i < errorMessages.length; i++) {
+                errorMessages[i].style.display = 'none';
+            }
+        
+            // Validate password length
+            if (newPassword.length < 8) {
+                document.getElementById('length-error-message').style.display = 'block';
+                return;  // Exit early
+            }
+        
+            // Validate password special characters
+            if (!/[!@#$%^&*]/.test(newPassword)) {
+                document.getElementById('special-error-message').style.display = 'block';
+                return;  // Exit early
+            }
+        
+            // Validate password numbers
+            if (!/[0-9]/.test(newPassword)) {
+                document.getElementById('number-error-message').style.display = 'block';
+                return;  // Exit early
+            }
+        
+            // Check if passwords match
+            if (newPassword !== confirmPassword) {
+                document.getElementById('match-error-message').style.display = 'block';
+                return;  // Exit early
+            }
+        
+            // If we passed all the checks, save the new username and password
+            localStorage.setItem('username', newUsername);
+            localStorage.setItem('password', newPassword);
+            alert('Account activation successful!');
+            window.location.href = 'Login.html';
+        });
+        </script>
+</body>
+</html>

@@ -3,49 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title> SOTERIA - About Us</title>
     <style>
         .container {
-            text-align: left;
-            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             padding: 20px;
         }
 
-        h1 {
-            font-size: 24px;
+        .header-content {
+            width: 55%;
+            text-align: left;
         }
 
-        .family img {
-            width: 80%;
-            margin: 20px 0;
+        h1 {
+            font-size: 28px;
+            margin-top: 20px;
         }
 
         .description {
-            font-size: 16px;
+            font-size: 20px;
             line-height: 1.5;
+            margin-top: 20px;
         }
 
         .contact-button {
-            background-color: #007BFF;
-            color: black;
+            background-color: black;
+            color: gold;
             padding: 10px 20px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            margin: 20px 0;
             cursor: pointer;
             border: none;
+            transition: background-color 0.3s ease;
         }
+
+        .home-button {
+            background-color: black;
+            color: gold;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #333;
+        }
+
+        .logo {
+            width: 80px;
+        }
+
+        .family {
+            width: 45%;
+        }
+
+        .family img {
+            width: 100%;
+            margin: 20px 0;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>About Us</h1>
-        <div class="family">
-            <img src="family.jpg" alt="Family Photo">
+        <div class="header-content">
+            <img class="logo" src="logo.png" alt="Logo">
+            <h1>About Us</h1>
+            <div class="description">
+                <p>At Soteria, we want to help you protect the most precious things in your life. <br> Since 2023 we’ve put our clients firmly at the forefront of our competitive Life Insurance Agency. It’s what sets us apart from the competition.</p>
+                <p>We offer affordable life insurance products and unparalleled customer support 24/7, so we’re always here when you need us the most. Contact us to find out more about our selection of products and services and how we can provide the extra layer of protection</p>
+                <a href="Contact Us.html" class="contact-button">Contact Us</a>
+                <a href="Homepage.html" class="home-button">Back to Home</a>
+            </div>
         </div>
-        <div class="description">
-            <p>At Soteria, we want to help you protect the most precious things in your life. Since 2023 we’ve put our clients firmly at the forefront of our competitive Life Insurance Agency. It’s what sets us apart from the competition.</p>
-            <p>We offer affordable life insurance products and unparalleled customer support 24/7, so we’re always here when you need us the most. Contact us to find out more about our selection of products and services and how we can provide the extra layer of protection
-
+        <div class="family">
+            <img src="family-about.png" alt="Family Photo">
+        </div>
+    </div>
+</body>
+</html>

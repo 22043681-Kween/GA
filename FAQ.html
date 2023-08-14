@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>SOTERIA - FAQ</title> 
+    <style>
+        body {
+            margin: 0; /* Removes the default margin */
+            font-family: Arial, sans-serif; 
+            background: url('faq-man.png') no-repeat center center fixed;  /* Sets the background image */
+            -webkit-background-size: cover; /* Ensures the image covers the entire page, ensures compatibility with all browsers */
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        /* Styling for the logo */
+        .logo {
+            position: absolute; /* Takes the logo out of the document flow, and positions it relative to the browser window */
+            top: 10px; /* Positions it 10px from the top of the window */
+            left: 20px; /* Positions it 10px from the left of the window */
+            width: 80px; /* Sets the width of the logo */
+        }
+
+        /* Styling for the FAQ container */
+        .faq-container {
+            position: absolute; /* Takes the container out of the document flow, and positions it relative to the browser window */
+            top: 100px; /* Positions it 100px from the top of the window */
+            left: 20px; /* Positions it 20px from the left of the window */
+            background-color: rgba(255,255,0,0.5); /* Gives the container a translucent yellow background color */
+            padding: 20px; /* Gives space between the content of the container and its border */
+            width: 30%; /* Sets the width of the container */
+            border-radius: 5px; /* Rounds the corners of the container */
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5); /* Gives the container an inner shadow */
+        }
+
+        /* Styling for the title of the FAQ */
+        .faq-container h1 {
+            margin-bottom: 20px; /* Gives space below the title */
+            color: black; /* Sets the color of the title */
+        }
+
+        /* Styling for the line beneath the title */
+        .faq-container hr {
+            border: 0; /* Removes the default border */
+            height: 1px; /* Sets the height of the line */
+            background: #333; /* Sets the color of the line */
+            background-image: linear-gradient(to right, #ccc, #333, #ccc); /* Gives the line a gradient effect */
+        }
+
+        /* Styling for the dropdown boxes */
+        .dropdown {
+            width: 100%; /* Makes the dropdown boxes take up the full width of their container */
+            border: 1px solid #ccc; /* Gives the dropdown boxes a border */
+            border-radius: 4px; /* Rounds the corners of the dropdown boxes */
+            overflow: hidden; /* Ensures that the content of the dropdown boxes doesn't overflow their borders */
+        }
+        /* Styling for the buttons that control the dropdown boxes */
+        .dropdown button {
+            width: 100%; /* Makes the buttons take up the full width of their container */
+            outline: none; /* Removes the default outline */
+            text-align: left; /* Aligns the text to the left */
+            cursor: pointer; /* Changes the cursor to a pointer when hovering over the buttons */
+            transition: 0.3s; /* Smooths any changes in the buttons' styling */
+        }
+        /* Styling for the buttons when hovered over */
+        .dropdown button:hover {
+            background-color: #ddd; /* Changes the background color when hovering */
+        }
+        /* Styling for the content of the dropdown boxes */
+        .dropdown-content {
+            max-height: 0; /* Initially hides the content */
+            transition: max-height 0.2s ease-out; /* Smooths the transition when showing and hiding the content */
+            overflow: hidden; /* Ensures that the content doesn't overflow its container */
+        }
+
+        .home-button {
+            background-color: black;
+            color: gold;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- The logo image -->
+    <img class="logo" src="logo.png" alt="logo">
+
+    <!-- The FAQ container -->
+    <div class="faq-container">
+        <!-- The title -->
+        <h1>Frequently Asked Questions</h1>
+        <!-- The line beneath the title -->
+        <hr> 
+        <!-- The dropdown boxes -->
+        <!-- Each html box contains a button that, when clicked, shows or hides the box's content -->
+        <div class="dropdown">
+            <button onclick="this.nextElementSibling.style.maxHeight=(this.nextElementSibling.style.maxHeight==='0px')?this.nextElementSibling.scrollHeight+'px':'0px'">How do I know which product is suitable for me?</button>
+            <div class="dropdown-content">
+                <p>Soteria's insurance survey is available to get to know you better! Once you have completed the survey, a product will be recommended to you. </p>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="this.nextElementSibling.style.maxHeight=(this.nextElementSibling.style.maxHeight==='0px')?this.nextElementSibling.scrollHeight+'px':'0px'">Question 2</button>
+            <div class="dropdown-content">
+                <p>Answer to question 2...</p>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="this.nextElementSibling.style.maxHeight=(this.nextElementSibling.style.maxHeight==='0px')?this.nextElementSibling.scrollHeight+'px':'0px'">Question 3</button>
+            <div class="dropdown-content">
+                <p>Answer to question 3...</p>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="this.nextElementSibling.style.maxHeight=(this.nextElementSibling.style.maxHeight==='0px')?this.nextElementSibling.scrollHeight+'px':'0px'">Question 4</button>
+            <div class="dropdown-content">
+                <p>Answer to question 4...</p>
+            </div>
+        </div>
+        <a href="Homepage.html" class="home-button">Back to Home</a>
+    </div>

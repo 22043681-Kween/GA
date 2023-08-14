@@ -43,8 +43,7 @@
     <div class="summary-container">
         <h1>Review Summary</h1>
         <p><strong>Insurance Type:</strong> <span id="insurance-type"></span></p>
-        <p><strong>Family Members:</strong></p>
-        <ul id="family-members"></ul>
+        <p><strong>Family Member:</strong> <span id="family-member"></span></p>
         <button id="confirm-payment" onclick="confirmPayment()">Confirm Payment</button>
         <button id="cancel" onclick="cancel()">Cancel</button>
     </div>
@@ -65,10 +64,7 @@
         document.getElementById('insurance-type').textContent = selectedInsuranceType;
 
         // Display the selected family member
-        var familyMembersList = document.getElementById('family-members');
-        var listItem = document.createElement('li');
-        listItem.textContent = selectedFamilyMember;
-        familyMembersList.appendChild(listItem);
+        document.getElementById('family-member').textContent = selectedFamilyMember;
 
         // Redirect to PaymentSuccessful.html on confirm
         function confirmPayment() {
@@ -80,8 +76,7 @@
             alert('Payment has been canceled.');
             // Redirect or perform other actions as needed
         }
-        </script>
-        </body>
-        </html>
-
+    </script>
+</body>
+</html>
 

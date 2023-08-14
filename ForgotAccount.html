@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login to SOTERIA</title>
+    <title>Reset Password - SOTERIA</title>
     <style>
+        /* Styles for the page */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -62,36 +63,41 @@
             background: #0056b3;
         }
 
+        .error-message {
+            color: red;
+            font-size: 0.8em;
+            display: none; /* Initially hidden */
+        }
     </style>
 </head>
 <body>
     <div class="flex-container">
         <img src="Soteria.png" alt="Soteria Logo" id="soteria-logo">
         <div class="login-container">
-            <h1>Login to SOTERIA</h1>
-            <form id="login-form">
-                <input type="text" id="username" placeholder="Enter Username">
-                <input type="password" id="password" placeholder="Enter Password">
-                <button type="submit">LOG IN</button>
+            <h1>Reset Password</h1>
+            <form id="reset-form">
+                <input type="password" id="new-password" placeholder="Enter New Password">
+                <input type="password" id="confirm-password" placeholder="Confirm New Password">
+                <p id="error-message" class="error-message">Passwords do not match.</p>
+                <button type="submit">RESET PASSWORD</button>
             </form>
-            <p><a href="ForgotAccount.html">Forgot Username/Password?</a></p>
-            <p>Don't have a Soteria account? <a href="ActivateAcc.html">Activate Now</a></p>
+            <p>Remembered your password? <a href="Login.html">Log in</a></p>
         </div>
     </div>
     <script>
-        document.getElementById('login-form').addEventListener('submit', function(e) {
+        document.getElementById('reset-form').addEventListener('submit', function(e) {
             e.preventDefault();
-    
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            var savedUsername = localStorage.getItem('username'); // Get the saved username
-            var savedPassword = localStorage.getItem('password'); // Get the saved password
+
+            var newPassword = document.getElementById('new-password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            var errorMessage = document.getElementById('error-message');
             
-            if (username === savedUsername && password === savedPassword) {
-                alert('Login successful!');
-                window.location.href = 'AccountPage.html'; // Redirect to AccountPage.html
+            if (newPassword === confirmPassword) {
+                localStorage.setItem('password', newPassword); // Save the new password
+                alert('Password reset successful!');
+                window.location.href = 'Login.html'; // Redirect to LoginPage.html
             } else {
-                alert('Invalid username or password.');
+                errorMessage.style.display = 'block'; // Show error message
             }
         });
     </script>

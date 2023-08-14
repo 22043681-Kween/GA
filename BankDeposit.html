@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Deposit Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .bank-form {
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bank-form label,
+        .bank-form input {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .bank-form input {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .bank-form button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="bank-form">
+        <h1>Enter Bank Deposit Details</h1>
+        <label for="bank-name">Bank Name:</label>
+        <input type="text" id="bank-name" placeholder="Your Bank">
+        <label for="account-holder-name">Account Holder's Name:</label>
+        <input type="text" id="account-holder-name" placeholder="John Doe">
+        <label for="account-number">Bank Account Number:</label>
+        <input type="text" id="account-number" placeholder="123456789">
+        <label for="transfer-amount">Transfer Amount:</label>
+        <input type="number" id="transfer-amount" placeholder="100.00">
+        <button onclick="validateBankDetails()">CONTINUE</button>
+        <p id="error-message"></p>
+    </div>
+    <script>
+        function validateBankDetails() {
+            var bankName = document.getElementById('bank-name').value;
+            var accountHolderName = document.getElementById('account-holder-name').value;
+            var accountNumber = document.getElementById('account-number').value;
+            var transferAmount = document.getElementById('transfer-amount').value;
+            var errorMessage = document.getElementById('error-message');
+
+            if (!bankName || !accountHolderName || !accountNumber || !transferAmount) {
+                errorMessage.textContent = 'Please fill out all fields.';
+            } else {
+                window.location.href = 'ReviewSummary.html';
+            }
+        }
+    </script>
+</body>
+</html>

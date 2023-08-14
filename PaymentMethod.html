@@ -50,7 +50,7 @@
         <p>Please choose your payment method:</p>
         <div class="payment-method" data-method="credit" onclick="selectPaymentMethod(this)">Credit/Debit card</div>
         <div class="payment-method" data-method="paypal" onclick="selectPaymentMethod(this)">PayPal</div>
-        <div class="payment-method" onclick="selectPaymentMethod(this)">Bank Deposit</div>
+        <div class="payment-method" data-method="bank" onclick="selectPaymentMethod(this)">Bank Deposit</div>
         <button onclick="continuePayment()">CONTINUE</button>
     </div>
     <script>
@@ -70,14 +70,24 @@
         function continuePayment() {
             var selectedMethod = document.querySelector('.payment-method.selected');
 
-            if (selectedMethod && selectedMethod.getAttribute('data-method') === 'paypal') {
-                alert('Proceeding with the selected payment method.');
-                window.location.href = 'PayPal.html';
-            } else if (selectedMethod && selectedMethod.getAttribute('data-method') === 'credit'){ 
-                alert('Proceeding with the selected payment method.');
-                window.location.href = 'CreditCard.html';
-                    // Implement other payment methods or show an error message
-                
+            if (selectedMethod) {
+                switch (selectedMethod.getAttribute('data-method')) {
+                    case 'paypal':
+                        alert('Proceeding with PayPal.');
+                        window.location.href = 'PayPal.html';
+                        break;
+                    case 'credit':
+                        alert('Proceeding with Credit/Debit card.');
+                        window.location.href = 'CreditCard.html';
+                        break;
+                    case 'bank':
+                        alert('Proceeding with Bank Deposit.');
+                        window.location.href = 'BankDeposit.html';
+                        break;
+                    default:
+                        alert('Please select a payment method.');
+                        break;
+                }
             } else {
                 alert('Please select a payment method.');
             }

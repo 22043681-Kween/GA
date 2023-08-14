@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center; 
+            padding: 2em; 
+        }
+        .form-container {
+            width: 90%; 
+            max-width: 600px; 
+            padding: 20px; 
+            background-color: #f8f8f8;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-group input[type="submit"] {
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: darkblue;
+        }
+    </style>
+    <script>
+        function handleFormSubmission(event) {
+            event.preventDefault();  // Prevent the form from submitting normally
+            alert('Your appointment request has been submitted!');
+            // Redirect to Accountpage.html
+            window.location.href = 'Accountpage.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Book an Appointment</h2>
+        <form onsubmit="handleFormSubmission(event)">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Preferred Time</label>
+                <input type="time" id="time" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Book Appointment">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
